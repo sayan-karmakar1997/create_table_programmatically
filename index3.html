@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<style>
+    
+</style>
+
+<body>
+    <button  onclick="generate_table()">click</button>
+    
+<script>
+    function generate_table() {
+        var body = document.getElementsByTagName("body")[0];
+        var table = document.createElement("table");
+        var tableBody = document.createElement("tablebody");
+        for (var i = 0; i < 100; i++) {
+            var heading = document.createElement("tr");
+            for (var j = 0; j < 100; j++) {
+            var row = document.createElement("td");
+            var cellText = document.createTextNode("CELL");
+            row.appendChild(cellText);
+            heading.appendChild(row);
+            }
+            tableBody.appendChild(heading);
+        }
+        table.appendChild(tableBody);
+        body.appendChild(table);
+        table.setAttribute("border", "1","border-collapse");
+}
+    
+ </script>
+</body>
+</html>
